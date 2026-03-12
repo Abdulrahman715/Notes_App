@@ -45,14 +45,9 @@ class _NotesAppState extends State<NotesApp> {
 
   @override
   Widget build(BuildContext context) {
-
     final appBarStyle = AppBarTheme(
       centerTitle: true,
-      titleTextStyle: TextStyle(
-        fontSize: 24,
-        fontWeight: FontWeight.bold,
-        color: Theme.of(context).colorScheme.onSurface, // علشان يغير اللون على حسب الثيم
-      ),
+      titleTextStyle: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
     );
 
     return MaterialApp(
@@ -64,8 +59,13 @@ class _NotesAppState extends State<NotesApp> {
         useMaterial3: true,
         brightness: Brightness.light,
         colorSchemeSeed: Colors.deepPurple,
-        appBarTheme:  appBarStyle,
         fontFamily: 'Poppins',
+        appBarTheme: appBarStyle.copyWith(
+          // لو حابب تخصص لون معين للدارك مود بس
+          titleTextStyle: appBarStyle.titleTextStyle?.copyWith(
+            color: Colors.black,
+          ),
+        ),
       ),
 
       // الثيم الغامق مع تعديلات الـ AppBar
@@ -73,7 +73,12 @@ class _NotesAppState extends State<NotesApp> {
         useMaterial3: true,
         brightness: Brightness.dark,
         colorSchemeSeed: Colors.deepPurple,
-        appBarTheme: appBarStyle,
+        appBarTheme: appBarStyle.copyWith(
+          // لو حابب تخصص لون معين للدارك مود بس
+          titleTextStyle: appBarStyle.titleTextStyle?.copyWith(
+            color: Colors.white,
+          ),
+        ),
       ),
 
       themeMode: _themeMode,

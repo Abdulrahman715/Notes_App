@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/constants.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -22,7 +23,7 @@ class CustomFloatingActionButton extends StatelessWidget {
 
       child: FloatingActionButton(
         onPressed: onPressed,
-        backgroundColor: Theme.of(context).colorScheme.primary,
+        backgroundColor: kPrimaryColor,
         foregroundColor: Theme.of(context).colorScheme.onPrimary,
         shape: CircleBorder(),
         child: Icon(Icons.add),
