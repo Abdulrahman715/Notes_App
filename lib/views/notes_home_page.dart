@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/helpers/custom_floating_action_button.dart';
+import 'package:notes_app/widgets/add_note_button_sheet.dart';
 import 'package:notes_app/widgets/notes_body.dart';
 
 class NotesHomePage extends StatelessWidget {
@@ -23,7 +24,15 @@ class NotesHomePage extends StatelessWidget {
       ),
 
       floatingActionButton: CustomFloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            builder: (context) => AddNoteButtonSheet(),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadiusGeometry.circular(16),
+            )
+          );
+        },
         message: 'Add Note',
       ),
 
@@ -34,3 +43,4 @@ class NotesHomePage extends StatelessWidget {
     );
   }
 }
+
