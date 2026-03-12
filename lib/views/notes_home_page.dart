@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/widgets/notes_body.dart';
 
 class NotesHomePage extends StatelessWidget {
   final VoidCallback onThemeToggole;
@@ -19,6 +20,9 @@ class NotesHomePage extends StatelessWidget {
           ),
         ],
       ),
+
+      body: NotesBody(),
     );
   }
 }
+

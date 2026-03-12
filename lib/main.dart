@@ -51,7 +51,7 @@ class _NotesAppState extends State<NotesApp> {
       titleTextStyle: TextStyle(
         fontSize: 24,
         fontWeight: FontWeight.bold,
-        color: Theme.of(context).colorScheme.onSurface, // علشان يغير اللون على حسب الثيم
+        // color: Theme.of(context).colorScheme.onSurface, // علشان يغير اللون على حسب الثيم
       ),
     );
 
@@ -65,6 +65,7 @@ class _NotesAppState extends State<NotesApp> {
         brightness: Brightness.light,
         colorSchemeSeed: Colors.deepPurple,
         appBarTheme:  appBarStyle,
+        fontFamily: 'Poppins',
       ),
 
       // الثيم الغامق مع تعديلات الـ AppBar
