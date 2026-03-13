@@ -86,36 +86,3 @@ class _NotesAppState extends State<NotesApp> {
     );
   }
 }
-
-
-// الثيم الفاتح مع تعديلات الـ AppBar
-      // theme: ThemeData(
-      //   useMaterial3: true,
-      //   brightness: Brightness.light,
-      //   colorSchemeSeed: Colors.deepPurple,
-      //   appBarTheme: const AppBarTheme(
-      //     // <-- ضفناها هنا جوه الـ ThemeData
-      //     centerTitle: true,
-      //     titleTextStyle: TextStyle(
-      //       fontSize: 24,
-      //       fontWeight: FontWeight.bold,
-      //       color: Colors.black, // لون النص في اللايت
-      //     ),
-      //   ),
-      // ),
-
-      // // الثيم الغامق مع تعديلات الـ AppBar
-      // darkTheme: ThemeData(
-      //   useMaterial3: true,
-      //   brightness: Brightness.dark,
-      //   colorSchemeSeed: Colors.deepPurple,
-      //   appBarTheme: const AppBarTheme(
-      //     // <-- وضفناها هنا كمان عشان تظهر في الدارك
-      //     centerTitle: true,
-      //     titleTextStyle: TextStyle(
-      //       fontSize: 24,
-      //       fontWeight: FontWeight.bold,
-      //       color: Colors.white, // لون النص في الدارك
-      //     ),
-      //   ),
-      // ),
