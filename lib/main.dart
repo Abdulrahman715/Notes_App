@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/services/save_and_load.dart';
-import 'package:notes_app/views/notes_home_page.dart';
+import 'package:notes_app/views/edit_note_view.dart';
+import 'package:notes_app/views/notes_home_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -82,7 +83,13 @@ class _NotesAppState extends State<NotesApp> {
       ),
 
       themeMode: _themeMode,
-      home: NotesHomePage(onThemeToggole: _toggleTheme),
+
+      routes: {
+        NotesHomePage.id: (context) => NotesHomePage(onThemeToggole: _toggleTheme),
+        EditNoteView.id: (context) => EditNoteView(),
+      },
+      
+      initialRoute: NotesHomePage.id,
     );
   }
 }

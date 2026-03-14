@@ -8,6 +8,8 @@ class NotesHomePage extends StatelessWidget {
 
   const NotesHomePage({super.key, required this.onThemeToggole});
 
+  static const String id = 'notes_home';
+
   @override
   Widget build(BuildContext context) {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
