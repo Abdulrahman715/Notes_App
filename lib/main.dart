@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'package:notes_app/constants.dart';
 import 'package:notes_app/services/save_and_load.dart';
 import 'package:notes_app/views/edit_note_view.dart';
 import 'package:notes_app/views/notes_home_view.dart';
@@ -8,6 +10,12 @@ void main() async {
 
   // هترجع true or false
   bool savedThemeIsDark = await ThemeService.loadTheme();
+
+  // await Future.delayed(Duration(seconds: 2)); // Simulate a delay for loading theme
+
+  await Hive.initFlutter(); // Initialize Hive
+
+  await Hive.openBox(kNotesBox); // Open a box for storing notes
 
   // هنبعت للتطبيق القيمة اللى جت
   runApp(NotesApp(isDark: savedThemeIsDark));
