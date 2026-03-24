@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:notes_app/constants.dart';
+import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/services/save_and_load.dart';
 import 'package:notes_app/views/edit_note_view.dart';
 import 'package:notes_app/views/notes_home_view.dart';
@@ -14,6 +15,9 @@ void main() async {
   // await Future.delayed(Duration(seconds: 2)); // Simulate a delay for loading theme
 
   await Hive.initFlutter(); // Initialize Hive
+
+  //! it is a compiler to translate the obj of NoteModel to small peasces , beacuse computer can understand it
+  Hive.registerAdapter(NoteModelAdapter());
 
   await Hive.openBox(kNotesBox); // Open a box for storing notes
 
@@ -93,10 +97,11 @@ class _NotesAppState extends State<NotesApp> {
       themeMode: _themeMode,
 
       routes: {
-        NotesHomePage.id: (context) => NotesHomePage(onThemeToggole: _toggleTheme),
+        NotesHomePage.id: (context) =>
+            NotesHomePage(onThemeToggole: _toggleTheme),
         EditNoteView.id: (context) => EditNoteView(),
       },
-      
+
       initialRoute: NotesHomePage.id,
     );
   }
